@@ -1,0 +1,56 @@
+[
+	{
+		"name": "Don Omar",
+		"email": "domomar@example.com",
+		"cellphone": "(87) 2118-2637",
+		"password": "senha123"
+	},
+	{
+		"name": "",
+		"email": "maria@example.com",
+		"cellphone": "987654321",
+		"password": "senha123"
+	},
+	{
+		"name": "Maria Oliveira",
+		"email": "",
+		"cellphone": "987654321",
+		"password": "senha123"
+	},
+	{
+		"name": "José Santos",
+		"email": "emailinvalido",
+		"cellphone": "987654321",
+		"password": "senha123"
+	},
+	{
+		"name": "Ana Souza",
+		"email": "ana@example.com",
+		"cellphone": "",
+		"password": "senha123"
+	},
+	{
+		"name": "Pedro Lima",
+		"email": "pedro@example.com",
+		"cellphone": "9876abc54321",
+		"password": "senha123"
+	},
+	{
+		"name": "Carla Santos",
+		"email": "carla@example.com",
+		"cellphone": "987654321",
+		"password": ""
+	},
+	{
+		"name": "Lucas Oliveira",
+		"email": "lucas@example.com",
+		"cellphone": "987654321",
+		"password": "123"
+	},
+	{
+		"name": "Patrícia Lima",
+		"email": "patricia@example.com",
+		"cellphone": "987654321",
+		"password": "p".repeat(256)
+	}
+]

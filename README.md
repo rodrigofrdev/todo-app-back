@@ -1,2 +1,2 @@
-# todo-app-back
-Backend for Todo App using Node.js
+# todo-list-back-end
+Todo List App - Back End

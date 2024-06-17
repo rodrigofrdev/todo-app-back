@@ -1,0 +1,52 @@
+[
+    {
+      "testCase": "Email válido e senha válida",
+      "data": {
+        "email": "usuario@teste.com",
+        "password": "senha123"
+      }
+    },
+    {
+      "testCase": "Email em branco",
+      "data": {
+        "email": "",
+        "password": "senha123"
+      }
+    },
+    {
+      "testCase": "Email inválido",
+      "data": {
+        "email": "emailinvalido",
+        "password": "senha123"
+      }
+    },
+    {
+      "testCase": "Email muito longo (mais de 255 caracteres)",
+      "data": {
+        "email": "e".repeat(256) + "@teste.com",
+        "password": "senha123"
+      }
+    },
+    {
+      "testCase": "Senha muito curta (menos de 5 caracteres)",
+      "data": {
+        "email": "usuario@teste.com",
+        "password": "123"
+      }
+    },
+    {
+      "testCase": "Senha muito longa (mais de 255 caracteres)",
+      "data": {
+        "email": "usuario@teste.com",
+        "password": "p".repeat(256)
+      }
+    },
+    {
+      "testCase": "Campos em branco (email e senha vazios)",
+      "data": {
+        "email": "",
+        "password": ""
+      }
+    }
+  ]
+  

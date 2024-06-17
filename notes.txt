@@ -1,0 +1,3 @@
+# Cors
+
+  credentials: permite que o navegador aceite cookies de origens diferentes.

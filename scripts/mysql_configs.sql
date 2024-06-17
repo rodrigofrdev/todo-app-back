@@ -1,0 +1,1 @@
+SET SQL_SAFE_UPDATES = 0; -- Allow updates without a WHERE clause
