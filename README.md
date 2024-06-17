@@ -11,3 +11,4 @@ Todo List App - Back End
 - [ ] Padronizar para Rest API
 - [ ] Implementar WebSockets
 - [ ] GraphQL
+- [ ] Tradução
