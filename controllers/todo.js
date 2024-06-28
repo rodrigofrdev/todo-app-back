@@ -4,7 +4,8 @@ const validate = require("validate.js");
 
 exports.getTodos = (req, res) => {
   const { id } = req.session.user;
-  Todo.findAll({ where: { id: id }, order: [["createdAt", "DESC"]] })
+
+  Todo.findAll({ where: { userId: id }, order: [["createdAt", "DESC"]] })
     .then((todos) => {
       res.status(200).json(todos);
     })
@@ -27,9 +28,8 @@ exports.postTodo = (req, res, next) => {
   Todo.findOne({ where: { title: title, userId: req.user.id } })
   .then((todo) => {
     if (todo) {
-      return res.status(400).json({ message: "Todo already exists" }); // Se o todo já existir, retorne um erro e interrompa a execução
+      return res.status(400).json({ message: "Todo already exists" });
     } else {
-      // Se o todo não existir, continue criando um novo
       return req.user.createTodo({
         title: title,
       })
@@ -47,22 +47,6 @@ exports.postTodo = (req, res, next) => {
     res.status(500).json({ message: "Internal server error" });
   });
 
-};
-
-exports.deleteTodo = (req, res, next) => {
-  const { id } = req.body;
-
-  Todo.findByPk(id)
-    .then((todo) => {
-      return todo.destroy();
-    })
-    .then(() => {
-      res.status(200).json({ message: "Todo deleted" });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json({ message: "Internal server error" });
-    });
 };
 
 exports.updateTodo = (req, res, next) => {
@@ -85,6 +69,22 @@ exports.updateTodo = (req, res, next) => {
     })
     .then(() => {
       res.status(200).json({ message: "Todo updated" });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ message: "Internal server error" });
+    });
+};
+
+exports.deleteTodo = (req, res, next) => {
+  const { id } = req.body;
+
+  Todo.findByPk(id)
+    .then((todo) => {
+      return todo.destroy();
+    })
+    .then(() => {
+      res.status(200).json({ message: "Todo deleted" });
     })
     .catch((err) => {
       console.log(err);

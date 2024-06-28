@@ -1,15 +1,15 @@
 const User = require("../models/user");
 const bcrypt = require("bcryptjs");
+const validate = require("validate.js");
 const loginConstraints = require("../validations/loginConstraints");
 const signupConstraints = require("../validations/signupConstraints");
-const validate = require("validate.js");
 
 exports.postSignup = (req, res, next) => {
   const name = req.body.name;
   const email = req.body.email;
   const cellphone = req.body.cellphone;
   const password = req.body.password;
-
+  
   const fieldsToValidate = { name, email, cellphone, password };
   const validation = validate(fieldsToValidate, signupConstraints);
 
@@ -38,6 +38,7 @@ exports.postSignup = (req, res, next) => {
       res.status(500).json({ message: "Internal server error" });
     });
 };
+
 exports.postLogin = (req, res, next) => {
   const email = req.body.email;
   const password = req.body.password;
