@@ -9,12 +9,13 @@ exports.postSignup = (req, res, next) => {
   const email = req.body.email;
   const cellphone = req.body.cellphone;
   const password = req.body.password;
-  
+
   const fieldsToValidate = { name, email, cellphone, password };
   const validation = validate(fieldsToValidate, signupConstraints);
 
   if (validation) {
-    return res.status(400).json({ message: validation });
+    const errorMessages = Object.values(validation).flat();
+    return res.status(400).json({ message: errorMessages });
   }
 
   User.findOne({ where: { email: email } })

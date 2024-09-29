@@ -3,7 +3,7 @@ const signupConstraints = {
   name: {
     presence: {
       allowEmpty: false,
-      message: "Name do not be empty",
+      message: "do not be empty",
     },
     length: {
       maximum: 255,
@@ -12,7 +12,7 @@ const signupConstraints = {
   email: {
     presence: {
       allowEmpty: false,
-      message: "E-mail do not be empty",
+      message: "do not be empty",
     },
     email: true,
     length: {
@@ -22,7 +22,7 @@ const signupConstraints = {
   cellphone: {
     presence: {
       allowEmpty: false,
-      message: "Cellphone do not be empty",
+      message: "do not be empty",
     },
     length: {
       maximum: 255,
@@ -30,13 +30,13 @@ const signupConstraints = {
     format: {
       pattern: "[0-9]+",
       flags: "i",
-      message: "deve conter apenas números",
+      message: "can only contain numbers",
     },
   },
   password: {
     presence: {
       allowEmpty: false,
-      message: "Password do not be empty",
+      message: "do not be empty",
     },
     length: {
       minimum: 5,
